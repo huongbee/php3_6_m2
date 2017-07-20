@@ -18,7 +18,8 @@ if(isset($_SESSION['username']) && isset($_SESSION['password'])){
 }
 elseif(isset($_COOKIE['username']) && isset($_COOKIE['password'])){
 	if($_COOKIE['username'] == 'admin' && $_COOKIE['password'] == 123){
-		
+		setcookie('username','admin',time()+60);
+		setcookie('password',123,time()+60);
 		echo 'Chào bạn, '.$_COOKIE['username'];
 
 	}
