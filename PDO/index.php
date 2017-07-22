@@ -14,6 +14,12 @@ try{
 	// else{
 	// 	echo 'thất bại';
 	// }
+
+	$sql = "DELETE FROM theloai WHERE id>=10";
+	
+	$dem = $dbh->exec($sql);
+	echo $dem;
+
 	/*$sql = "SELECT * FROM theloai";
 	$stmt = $dbh->prepare($sql);//
 	if($stmt->execute()){ //thực thi thnahf công
@@ -30,7 +36,7 @@ try{
 	}*/
 	//$name = $_GET['name'];
 
-	$sql = "INSERT INTO theloai(name,alias,image) VALUES (?,?,?)";
+	/*$sql = "INSERT INTO theloai(name,alias,image) VALUES (?,?,?)";
 
 	$sth = $dbh->prepare($sql);
 	//1
@@ -38,8 +44,8 @@ try{
 	$sth->bindParam(2,$alias);
 	$sth->bindParam(3,$hinh);
 	
-	$name = 'Thể loại 3';
-	$alias = 'The-loai-3';
+	$name = 'Thể loại 5';
+	$alias = 'The-loai-5';
 	$hinh = '3.png';
 
 	$sth->execute();
@@ -52,13 +58,35 @@ try{
 	$sth->bindParam(2,$alias);
 	$sth->bindParam(3,$hinh);
 
-	$name = 'Thể loại 4';
-	$alias = 'The-loai-4';
+	$name = 'Thể loại 6';
+	$alias = 'The-loai-6';
 	$hinh = '4.png';
 
 	$sth->execute();
 
-	echo 'thành công';
+	echo 'thành công';*/
+	//UPDATE
+	//không tham số
+	/*$sql = "UPDATE theloai SET name='thể loại 7', alias='the-loai-7' WHERE id=13";
+	$dbh->exec($sql);
+	echo 'Thành công';*/
+
+	/*//có tham số
+	$sql ="UPDATE users SET password=?";
+	$sth = $dbh->prepare($sql);
+
+	$sth->bindParam(1,$password);
+	//$sth->bindParam(2,$id);
+
+	$password = md5('000000');
+	//$id = 14;
+
+	$sth->execute();
+
+	echo $sth->rowCount();*/
+
+
+
 
 }
 catch(PDOException  $e){
